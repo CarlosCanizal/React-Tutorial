@@ -31,9 +31,23 @@
         render: function(){
           return(
             <div className="commentList">
-              Hello, I am a CommentList.
+              <Comment author="Carlos Canizal">This is one Comment</Comment>
+              <Comment author="John Titor">This is *another* Comment</Comment>
             </div>
           )
+        }
+      });
+
+      var Comment = React.createClass({
+        render: function(){
+          return(
+            <div className="comment">
+              <h2 className="commentAuthor">
+                {this.props.author}
+              </h2>
+              {this.props.children}
+            </div>
+          );
         }
       });
 
